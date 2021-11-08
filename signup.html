@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/signUp.css">
+</head>
+<body>
+    <div id='form'>
+        <input type="text" placeholder="name" id='name'>
+        <input type="email" placeholder="email" id='email'>
+        <input type="password" placeholder="password" id='password'>
+        <input type="text" placeholder="username" id='username'>
+        <input type="number" placeholder="mobile" id='mobile'>
+        <input type="text" placeholder="description" id='description'>
+        <button id='btn'>SIGN UP</button>
+    </div>
+</body>
+</html>
+<script type="module"> 
+
+ btn.addEventListener('click',get)
+     function get(){
+        var nm = document.getElementById('name').value
+ var email = document.getElementById('email').value
+ var password = document.getElementById('password').value
+ var username = document.getElementById('username').value
+ var mobile = document.getElementById('mobile').value
+ var description = document.getElementById('description').value
+ var btn = document.getElementById('btn')
+         console.log(nm)
+    fetch('https://masai-api-mocker.herokuapp.com/auth/register',{
+         method:"POST",
+         body:JSON.stringify({
+         "name": nm,
+          "email": email,
+         "password": password,
+         "username": username,
+         "mobile": mobile,
+        "description": description 
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+             
+         }).then(res=>
+         {  
+             return res.json()
+         }).then(res=>{
+           if(res.error == false)
+           {
+               alert('YOU ARE REGISTERED')
+               window.location.href = 'signIn.html'
+           }
+           else{
+              alert('YOU ARE NOT REGISTERED INVALID DETAILS!')
+           }
+         }) 
+        }
+         
+</script>
