@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <div id='navbar'>
+        <div>HOME</div>
+    <div>
+        <a href="menu.html">Menu</a>
+        <a href="signIn.html">SignIn</a>
+        <a href="signUp.html">SignUp</a>
+    </div>
+    </div>
+    <div id='cont'>
+        
+    </div>
+</body>
+</html>
+<script type ='module'>
+    import {getData ,append} from './scripts/script.js'
+    
+    getData(`http://www.themealdb.com/api/json/v1/1/categories.php`).then(res=>
+    {
+        append(res.categories);
+    })
+</script>

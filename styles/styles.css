@@ -1,0 +1,21 @@
+    #navbar{
+            display: flex;
+            flex-direction: row;
+            background-color: aqua;
+            justify-content: space-between;
+        }
+        #navbar >div{
+            display: flex;
+            padding: 30px;
+            cursor: pointer;
+        }
+        #navbar >div>a{
+            margin-right: 20px;
+        }
+        #cont{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            width: 1170px;
+            margin: auto;
+            grid-gap:20px
+        }

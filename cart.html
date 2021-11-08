@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id='navbar'>
+        <div>HOME</div>
+    <div>
+        <a href="menu.html">Menu</a>
+        <a href="#">SignIn</a>
+        <a href="#">SignUp</a>
+    </div>
+    </div>
+    <h1>Welcome to cart! Your selected Food!</h1>
+    <div id='cont'>
+        
+    </div>
+</body>
+</html>
+<script type="module">
+    import {append} from './scripts/script.js'
+   let fooddata = JSON.parse(localStorage.getItem('foodCart'))
+   console.log(fooddata);
+    append(fooddata)
+    let show = document.getElementById('show')
+    
+     setTimeout(() => {
+         alert('Order is Placed')
+     }, 0);
+     setTimeout(() => {
+         alert('Your order is being cooked')
+     }, 3000);
+     setTimeout(() => {
+         alert('Your order is ready')
+     }, 8000);
+     setTimeout(() => {
+         alert('Order out for delivery')
+     }, 10000);
+     setTimeout(() => {
+         alert('Order delivered')
+     }, 12000);
+</script>
